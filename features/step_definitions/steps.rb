@@ -33,4 +33,5 @@ end
 
 Given /^I create property filter$/ do
  @tests.test_add_filter.create_filter
+ @tests.test_add_filter.filter_displayed?
 end

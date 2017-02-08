@@ -29,9 +29,13 @@ class ScreenSetFilterParameters < ScreenBase
       @parameter_holders[:type], @parameter_holders[:value]
     ).each do |param|
       next unless param.find_element(@parameter_name[:type], @parameter_name[:value]).text == parameter_hash['name']
+
       param.find_element(@from_value[:type], @from_value[:value]).send_keys(parameter_hash['left'])
       param.find_element(@till_value[:type], @till_value[:value]).send_keys(parameter_hash['right'])
+
+
       @driver.press_keycode(4)
+
     end
 end
 
