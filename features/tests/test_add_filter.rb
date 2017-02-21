@@ -55,4 +55,11 @@ class TestAddFilter
     open_filter_parameter_screen
     submit_filter_data
   end
+
+  def filter_exists_check
+
+    @screens.screen_serach_filters.visible? 'Meklēšanas filtri'
+    @screens.screen_serach_filters.check_filter(@filter_data.name)
+
+  end
 end

@@ -3,13 +3,13 @@ Feature: 1. Filter feature
   Scenario: Landline positive filter
     Given I have opened create filter screen
     And I create correct landline filter
-    Then I validate created filter
+    Then I validate created landline filter
 
     @transport_correct
   Scenario: Transport positive filter
     Given I have opened create filter screen
     And I create correct transport filter
-    Then I validate created filter
+    Then I validate created transport filter
 
     @transport_incorrect
   Scenario: Transport negative filter
@@ -21,7 +21,7 @@ Feature: 1. Filter feature
   Scenario: Vacancy positive filter
     Given I have opened create filter screen
     And I create correct vacancy filter
-    Then I validate created filter
+    Then I validate created vacancy filter
 
     @vacancy_incorrect
   Scenario: Vacancy positive filter

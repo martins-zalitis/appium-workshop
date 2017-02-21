@@ -1,8 +1,10 @@
 Given /^I am on intro screen$/ do
+  p "Intro screen"
   @tests.test_intro.intro_visible?
 end
 
 Given /^I have opened create filter screen$/ do
+  p "Close intro"
   @tests.test_intro.close_intro
 end
 
@@ -26,6 +28,15 @@ Then /^I check if I am on filter parameter screen$/ do
   @tests.test_filter_existance.check_screen
 end
 
-Given /^I validate created filter$/ do
-  @tests.test_filter_existance.check_filter_existance
+Given /^I validate created (.*?) filter$/ do |type|
+
+  filter_dict = {'landline' => 'property_positive'}
+  filter_dict['transport'] = 'transport_positive'
+  filter_dict['vacancy'] = 'vacancy_positive'
+
+  @tests.test_add_filter.set_filter(filter_dict[type])
+  @tests.test_add_filter.filter_exists_check
+
+
+  #@tests.test_filter_existance.check_filter_existance(type)
 end

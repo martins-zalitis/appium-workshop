@@ -7,11 +7,13 @@ class ScreenIntro < ScreenBase
   end
 
   def visible?
-    # @driver.alert_accept
+    @driver.alert_accept
     @driver.find_element(@base[:type], @base[:value])
   end
 
   def close_intro
-    @driver.find_element(@button_to_app[:type], @button_to_app[:value]).click
+    visible?
+    # @driver.wait { @driver.find_element(@button_to_app[:type], @button_to_app[:value]).displayed? }
+    # @driver.find_element(@button_to_app[:type], @button_to_app[:value]).click
   end
 end
